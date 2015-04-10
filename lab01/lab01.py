@@ -11,7 +11,7 @@ def getDirectorySize(pathname = '.'):
 	Args:
 		pathname(str, optional): directory pathname. Defaults to current directory.
 	
-	Eeturns:
+	Returns:
 		tuple contatining size of the directory, name of the largest file and size of the largest file
 	
 	"""
@@ -25,10 +25,11 @@ def getDirectorySize(pathname = '.'):
 	return total_size, max(size, key=size.get), size[max(size, key=size.get)]
 
 
-print("enter pathname:", end="\t")
-dirName = input()
+if __name__ == '__main__':
+	print("enter pathname:", end="\t")
+	dirName = input()
 
-total, largestName, largestSize = getDirectorySize(dirName)
+	total, largestName, largestSize = getDirectorySize(dirName)
 
-print("size of directory", dirName, ":", total, "bytes")
-print("largest filename:", largestName, ", largest file size: ", largestSize, "bytes")
+	print("size of directory", dirName, ":", total, "bytes")
+	print("largest filename:", largestName, ", largest file size: ", largestSize, "bytes")
